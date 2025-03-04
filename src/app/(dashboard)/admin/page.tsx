@@ -1,0 +1,19 @@
+import UserCard from "@/components/UserCard";
+
+const AdminDashboard = () => {
+  return (
+    <div className="flex flex-col lg:flex-row gap-4 p-4">
+      <div className="w-full lg:w-2/3">
+        <div className="flex justify-between gap-2 flex-wrap">
+          <UserCard label="student" count={2000} />
+          <UserCard label="teacher" count={50} />
+          <UserCard label="parent" count={4000} />
+          <UserCard label="staff" count={70} />
+        </div>
+      </div>
+      <div className="w-full lg:w-1/3">r</div>
+    </div>
+  );
+};
+
+export default AdminDashboard;
