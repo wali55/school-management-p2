@@ -16,3 +16,83 @@
   background: #BAE6FD !important;
   color: black !important;
 }
+
+/* Big Calendar */
+.rbc-btn-group:nth-child(1) {
+  display: none !important;
+}
+
+.rbc-toolbar-label {
+  text-align: right !important;
+  margin-right: 10px !important;
+}
+
+.rbc-btn-group:last-child button {
+  background: #EFF6FF !important;
+  border: none !important;
+  font-size: 14px !important;
+  margin: 2px !important;
+}
+
+.rbc-btn-group:last-child button.rbc-active {
+  box-shadow: none !important;
+  background: #FAF5FF !important;
+}
+
+.rbc-time-header {
+  display: none !important;
+}
+
+.rbc-time-content {
+  border-top: none !important;
+  font-size: 14px !important;
+}
+
+.rbc-label {
+  margin-right: 20px !important;
+  margin-left: 20px !important;
+}
+
+.rbc-timeslot-group {
+  background: #EFF6FF !important;
+}
+
+.rbc-event {
+  color: black !important;
+  border: none !important;
+}
+
+.rbc-event:nth-child(1) {
+  background-color: #F7FEE7 !important;
+}
+.rbc-event:nth-child(2) {
+  background-color: #FFF1F2 !important;
+}
+.rbc-event:nth-child(3) {
+  background-color: #FDF4FF !important;
+}
+.rbc-event:nth-child(4) {
+  background-color: #FFFBEB !important;
+}
+.rbc-event:nth-child(5) {
+  background-color: #F7FEE7 !important;
+}
+.rbc-event:nth-child(6) {
+  background-color: #FFF1F2 !important;
+}
+.rbc-event:nth-child(7) {
+  background-color: #FDF4FF !important;
+}
+.rbc-event:nth-child(8) {
+  background-color: #FFFBEB !important;
+}
+
+.rbc-event-label {
+  margin-bottom: 5px !important;
+  color: gray !important;
+}
+
+.rbc-event {
+  margin-top: 5px !important;
+  margin-left: 5px !important;
+}

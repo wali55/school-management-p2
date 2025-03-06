@@ -19,16 +19,30 @@ const events = [
 const EventCalendar = () => {
   const [value, onChange] = useState<Value>(new Date());
   return (
-    <div className="bg-white rounded-md w-full p-4">
+    <div className="bg-white rounded-md w-full p-4 flex flex-col gap-4">
       <Calendar onChange={onChange} value={value} />
-      <div className="flex items-center justify-between mt-4">
+      <div className="flex items-center justify-between">
         <h1 className="text-xl font-semibold">Events</h1>
         <Image src="/moreDark.png" alt="" width={20} height={20} />
         
         
       </div>
-      <div className="flex flex-col gap-2">
-        <div className="border rounded-md p-4">
+      <div className="flex flex-col gap-4">
+        <div className="border rounded-md p-4 flex flex-col gap-2 border-t-4 border-t-blue-100">
+            <div className="flex items-center justify-between">
+              <h1 className="font-semibold">Lorem, ipsum dolor sit</h1>
+              <p className="text-xs text-gray-400">12:00 PM - 2:00 PM</p>
+            </div>
+            <p className="text-sm text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem, ipsum.</p>
+        </div>
+        <div className="border rounded-md p-4 flex flex-col gap-2 border-t-4 border-t-purple-100">
+            <div className="flex items-center justify-between">
+              <h1 className="font-semibold">Lorem, ipsum dolor sit</h1>
+              <p className="text-xs text-gray-400">12:00 PM - 2:00 PM</p>
+            </div>
+            <p className="text-sm text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem, ipsum.</p>
+        </div>
+        <div className="border rounded-md p-4 flex flex-col gap-2 border-t-4 border-t-yellow-100">
             <div className="flex items-center justify-between">
               <h1 className="font-semibold">Lorem, ipsum dolor sit</h1>
               <p className="text-xs text-gray-400">12:00 PM - 2:00 PM</p>
