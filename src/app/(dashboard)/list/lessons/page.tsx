@@ -1,7 +1,7 @@
 import Pagination from "@/components/Pagination";
 import TableList from "@/components/TableList";
 import TableSearch from "@/components/TableSearch";
-import { lessonsData } from "@/lib/data";
+import { lessonsData, role } from "@/lib/data";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -24,6 +24,10 @@ const columns = [
     accessor: "teacher",
     className: "hidden md:table-cell",
   },
+  {
+    label: "Actions",
+    accessor: "actions"
+  }
 ];
 
 const AllLessons = () => {
@@ -38,14 +42,16 @@ const AllLessons = () => {
         <td className="hidden md:table-cell">{item.teacher}</td>
         <td>
           <div className="flex items-center gap-2">
-            <Link href={`/list/teachers/${item.id}`}>
-            <button className="flex items-center justify-center bg-sky-200 size-7 rounded-full">
-              <Image src="/edit.png" alt="" width={14} height={14} />
-            </button>
-            </Link>
-            <button className="flex items-center justify-center bg-[#CFCEFC] size-7 rounded-full">
-              <Image src="/delete.png" alt="" width={14} height={14} />
-            </button>
+            {role === "admin" && (
+              <>
+                <button className="flex items-center justify-center bg-sky-200 size-7 rounded-full">
+                  <Image src="/edit.png" alt="" width={14} height={14} />
+                </button>
+                <button className="flex items-center justify-center bg-[#CFCEFC] size-7 rounded-full">
+                  <Image src="/delete.png" alt="" width={14} height={14} />
+                </button>
+              </>
+            )}
           </div>
         </td>
       </tr>

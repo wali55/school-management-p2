@@ -1,7 +1,7 @@
 import Pagination from "@/components/Pagination";
 import TableList from "@/components/TableList";
 import TableSearch from "@/components/TableSearch";
-import { teachersData } from "@/lib/data";
+import { role, teachersData } from "@/lib/data";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -67,9 +67,9 @@ const AllTeachers = () => {
               <Image src="/view.png" alt="" width={14} height={14} />
             </button>
             </Link>
-            <button className="flex items-center justify-center bg-[#CFCEFC] size-7 rounded-full">
+            {role === "admin" && <button className="flex items-center justify-center bg-[#CFCEFC] size-7 rounded-full">
               <Image src="/delete.png" alt="" width={14} height={14} />
-            </button>
+            </button>}
           </div>
         </td>
       </tr>

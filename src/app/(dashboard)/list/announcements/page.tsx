@@ -1,49 +1,45 @@
 import Pagination from "@/components/Pagination";
 import TableList from "@/components/TableList";
 import TableSearch from "@/components/TableSearch";
-import { classesData, role } from "@/lib/data";
+import { announcementsData, role } from "@/lib/data";
 import Image from "next/image";
 import Link from "next/link";
 
-type Class = {
+type Announcement = {
   id: number;
-  name: string;
-  capacity: number;
-  grade: number;
-  supervisor: string;
+  title: string;
+  class: string;
+  date: string;
 };
 
 const columns = [
-  { label: "Class Name", accessor: "name" },
+  { label: "Title", accessor: "title" },
   {
-    label: "Capacity",
-    accessor: "capacity",
+    label: "Class",
+    accessor: "class",
     className: "hidden md:table-cell",
   },
   {
-    label: "Grade",
-    accessor: "grade",
+    label: "Date",
+    accessor: "date",
     className: "hidden md:table-cell",
   },
   {
-    label: "Supervisor",
-    accessor: "supervisor",
-    className: "hidden lg:table-cell",
-  },
-  { label: "Actions", accessor: "actions" },
+    label: "Actions",
+    accessor: "actions"
+  }
 ];
 
-const AllClasses = () => {
-  const renderedRow = (item: Class) => {
+const AllAnnouncements = () => {
+  const renderedRow = (item: Announcement) => {
     return (
       <tr
         key={item.id}
         className="border-b border-b-gray-200 even:bg-gray-50 text-sm hover:bg-purple-50"
       >
-        <td className="p-4">{item.name}</td>
-        <td className="hidden md:table-cell">{item.capacity}</td>
-        <td className="hidden md:table-cell">{item.grade}</td>
-        <td className="hidden lg:table-cell">{item.supervisor}</td>
+        <td className="p-4">{item.title}</td>
+        <td className="hidden md:table-cell">{item.class}</td>
+        <td className="hidden md:table-cell">{item.date}</td>
         <td>
           <div className="flex items-center gap-2">
             {role === "admin" && (
@@ -64,7 +60,7 @@ const AllClasses = () => {
   return (
     <div className="m-4 p-4 bg-white rounded-md flex flex-col gap-8">
       <div className="flex flex-col lg:flex-row justify-between items-center">
-        <h1 className="hidden lg:block text-xl font-semibold">All Classes</h1>
+        <h1 className="hidden lg:block text-xl font-semibold">All Announcements</h1>
         <div className="flex flex-col lg:flex-row gap-4 w-full lg:w-fit items-center">
           <TableSearch />
           <div className="self-end flex gap-4">
@@ -92,11 +88,11 @@ const AllClasses = () => {
       <TableList
         columns={columns}
         renderedRow={renderedRow}
-        data={classesData}
+        data={announcementsData}
       />
       <Pagination />
     </div>
   );
 };
 
-export default AllClasses;
+export default AllAnnouncements;

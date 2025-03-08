@@ -1,7 +1,7 @@
 import Pagination from "@/components/Pagination";
 import TableList from "@/components/TableList";
 import TableSearch from "@/components/TableSearch";
-import { parentsData } from "@/lib/data";
+import { parentsData, role } from "@/lib/data";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -34,22 +34,24 @@ const AllParents = () => {
         className="border-b border-b-gray-200 even:bg-gray-50 text-sm hover:bg-purple-50"
       >
         <td className="p-4">
-            <h3 className="font-semibold">{item.name}</h3>
-            <p className="text-xs text-gray-500">{item.email}</p>
+          <h3 className="font-semibold">{item.name}</h3>
+          <p className="text-xs text-gray-500">{item.email}</p>
         </td>
         <td className="hidden md:table-cell">{item.students.join(",")}</td>
         <td className="hidden lg:table-cell">{item.phone}</td>
         <td className="hidden lg:table-cell">{item.address}</td>
         <td>
           <div className="flex items-center gap-2">
-            <Link href={`/list/teachers/${item.id}`}>
-            <button className="flex items-center justify-center bg-sky-200 size-7 rounded-full">
-              <Image src="/edit.png" alt="" width={14} height={14} />
-            </button>
-            </Link>
-            <button className="flex items-center justify-center bg-[#CFCEFC] size-7 rounded-full">
-              <Image src="/delete.png" alt="" width={14} height={14} />
-            </button>
+            {role === "admin" && (
+              <>
+                <button className="flex items-center justify-center bg-sky-200 size-7 rounded-full">
+                  <Image src="/edit.png" alt="" width={14} height={14} />
+                </button>
+                <button className="flex items-center justify-center bg-[#CFCEFC] size-7 rounded-full">
+                  <Image src="/delete.png" alt="" width={14} height={14} />
+                </button>
+              </>
+            )}
           </div>
         </td>
       </tr>
