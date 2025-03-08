@@ -77,7 +77,7 @@ const AllStudents = () => {
     <div className="m-4 p-4 bg-white rounded-md flex flex-col gap-8">
       <div className="flex flex-col lg:flex-row justify-between items-center">
         <h1 className="hidden lg:block text-xl font-semibold">All Students</h1>
-        <div className="flex flex-col lg:flex-row gap-8 w-full lg:w-fit items-center">
+        <div className="flex flex-col lg:flex-row gap-4 w-full lg:w-fit items-center">
           <TableSearch />
           <div className="self-end flex gap-4">
             <Link
