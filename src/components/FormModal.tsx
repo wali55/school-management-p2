@@ -28,10 +28,8 @@ const FormModal = ({
 }) => {
   const size = type === "create" ? "w-8 h-8" : "w-7 h-7";
   const bgColor =
-    type === "create"
-      ? "bg-yellow-200"
-      : type === "update"
-      ? "bg-sky-200"
+    type === "create" ? "bg-yellow-200"
+      : type === "update" ? "bg-sky-200"
       : "bg-[#CFCEFC]";
 
   const [open, setOpen] = useState(false);
@@ -75,3 +73,4 @@ const FormModal = ({
 };
 
 export default FormModal;
+
