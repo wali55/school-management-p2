@@ -95,12 +95,7 @@ const AllTeachers = () => {
             >
               <Image src="/sort.png" alt="" width={16} height={16} />
             </Link>
-            <Link
-              href="/"
-              className="bg-yellow-300 rounded-full size-8 flex justify-center items-center"
-            >
-              <Image src="/plus.png" alt="" width={16} height={16} />
-            </Link>
+            <FormModal table="teacher" type="create" />
           </div>
         </div>
       </div>
