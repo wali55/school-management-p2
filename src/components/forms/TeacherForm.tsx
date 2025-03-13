@@ -25,7 +25,7 @@ const TeacherForm = ({type, data}: {
         console.log(data);
     })
     return (
-        <form onSubmit={onSubmit} className="flex flex-col gap-8 bg-white rounded-md p-4">
+        <form onSubmit={onSubmit} className="flex flex-col gap-8">
             <h1 className="text-xl font-semibold">{type === "create" ? "Create Teacher" : "Update Teacher"}</h1>
             <span className="text-xs text-gray-400 font-semibold">Authentication Information</span>
             <div className="flex flex-col gap-2 w-full md:w-1/4">
